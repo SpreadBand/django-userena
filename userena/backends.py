@@ -33,7 +33,7 @@ class UserenaAuthenticationBackend(ModelBackend):
         """
         user = self._lookup_identification(identification)
 
-        if check_password:
+        if user and check_password:
             # Standard "username/pass" challenge
             if user.check_password(password):
                 return user
